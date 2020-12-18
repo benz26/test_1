@@ -1,3 +1,4 @@
+
 git 
 
 //配置用户信息
@@ -89,18 +90,52 @@ git commit -m "删除"
 git push origin main  //删除远程仓库的文件git.txt
 ----
 
-（4）、撤销commit
+（4）、撤销commit（撤销暂缓区，不commit某一文件或所有commit取消）
 
 HEAD^
 最新一次提交的第一个父提交。
 
 HEAD当前快照
 git reset HEAD^1     //撤销commit,如果想修改commit时的文件,则使用上面命令撤销
+git reset HEAD u-boot/drivers/video/jz_lcd/jz_lcd_v13.c 
+
 git show  HEAD^1      //上一次commit
 
-(5)
+
+(5)ssh
 ssh git@github.com
 git clone git@github.com:lifeyx/test2.git 
+
+（6）查看本地文件修改了什么
+git diff Makefile 
+撤销本地修改，变成最新
+git checkout Makefile
+
+(7)更新
+git pull --rebase origin main 
+
+
+(8)git show
+查看最近一次提交
+
+
+（9）、
+放弃本地其它修改，直接覆盖,输入: 
+git reset --hard
+git pull
+
+（10）、
+查看每一行是哪次提交最后修改的
+git blame filename  
+
+
+（11）、列出文件的所有修改记录
+git log -p filename   
+
+
+ 
+
+
 
 
 
